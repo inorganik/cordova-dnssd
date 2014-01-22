@@ -30,7 +30,7 @@ DNSSD.prototype.resolve=function(serviceName, regType, domain, serviceResolved) 
     function success(result)
     {
         if(result.serviceResolved)
-            serviceResolved(result.hostName, result.port, result.serviceName, result.regType, result.domain);
+            serviceResolved(result.hostName, result.port, result.serviceName, result.regType, result.domain, result.address, result.address6);
     }
 	
 	return cordova.exec(success, function(){}, "fi.peekpoke.cordova.dnssd", "resolve", [serviceName, regType, domain]);
