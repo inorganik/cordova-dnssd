@@ -60,7 +60,7 @@
     self.currentResolve = nil;
     
     NSUInteger argc = [command.arguments count];
-    NSLog(@"resolve argc %d", (int)argc);
+    //NSLog(@"resolve argc %d", (int)argc);
     
 	if (argc < 3) {
         CDVPluginResult* result = [CDVPluginResult
@@ -87,7 +87,7 @@
 // 
 
 - (void)netServiceBrowser:(NSNetServiceBrowser*)netServiceBrowser didRemoveService:(NSNetService*)service moreComing:(BOOL)moreComing {
-    NSLog(@"didRemoveService");
+    //NSLog(@"didRemoveService");
     
     NSMutableDictionary* resultDict = [[NSMutableDictionary alloc] init];
     [resultDict setObject:[NSNumber numberWithBool:TRUE] forKey:@"serviceLost"];
@@ -105,7 +105,7 @@
 }
 
 - (void)netServiceBrowser:(NSNetServiceBrowser*)netServiceBrowser didFindService:(NSNetService*)service moreComing:(BOOL)moreComing {
-    NSLog(@"didFindService name %@", service.name);
+    //NSLog(@"didFindService name %@", service.name);
     
     NSMutableDictionary* resultDict = [[NSMutableDictionary alloc] init];
     [resultDict setObject:[NSNumber numberWithBool:TRUE] forKey:@"serviceFound"];
@@ -123,12 +123,12 @@
 }
 
 - (void)netService:(NSNetService *)sender didNotResolve:(NSDictionary *)errorDict {
-    NSLog(@"didNotResolve");
+    //NSLog(@"didNotResolve");
     // TODO not used (timeout 0)
 }
 
 - (void)netServiceDidResolveAddress:(NSNetService *)service {
-    NSLog(@"netServiceDidResolveAddress");
+    //NSLog(@"netServiceDidResolveAddress");
     
     
     NSMutableDictionary* resultDict = [[NSMutableDictionary alloc] init];
