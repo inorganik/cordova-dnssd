@@ -11,7 +11,7 @@ function DNSSD()
 }
 
 DNSSD.prototype.browse=function(regType, domain, serviceFound, serviceLost) { 
-    console.log("browse "+regType);
+    //console.log("browse "+regType);
 
     function success(result)
     {
@@ -26,7 +26,7 @@ DNSSD.prototype.browse=function(regType, domain, serviceFound, serviceLost) {
 
 DNSSD.prototype.resolve=function(serviceName, regType, domain, serviceResolved) { 
 
-    console.log("resolve "+serviceName);
+    //console.log("resolve "+serviceName);
     function success(result)
     {
         if(result.serviceResolved)
@@ -37,7 +37,7 @@ DNSSD.prototype.resolve=function(serviceName, regType, domain, serviceResolved) 
 }
 
 cordova.addConstructor(function() {
-	console.log('initializing window.plugins.dnssd'); 
+	//console.log('initializing window.plugins.dnssd'); 
 	if(!window.plugins)	{
 		window.plugins = {};
 	}
